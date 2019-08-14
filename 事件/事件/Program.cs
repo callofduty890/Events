@@ -31,6 +31,15 @@ namespace 事件
         static void Main(string[] args)
         {
             //开始实现
+            RunSports runSports = new RunSports();//运动员
+            Judgment judgment = new Judgment();   //发令员
+            //订阅事件-说明联系
+            judgment.eventRun += new Judgment.delegateRun(runSports.Run);
+            //触发事件
+            judgment.Begin();
+            //
+            Console.ReadLine();
+
         }
     }
 }
